@@ -12,9 +12,9 @@ input.addEventListener("click", (e)=>{
             for(let j=0; j< value; j++){
                 const grid = document.createElement("div");
                 let width = 450/value;
-                let height = 410/value;
+                let height = 450/value;
                 grid.style.width = width +"px";
-                grid.style.height = height +"px";
+                grid.style.height = width +"px";
 
                 const container = document.querySelector(".container");
                 grid.addEventListener("mouseover", (e)=> {
