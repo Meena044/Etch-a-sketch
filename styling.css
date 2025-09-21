@@ -13,35 +13,37 @@ body{
     display: flex;
     flex-wrap: wrap;
     min-width: 450px;
-    max-width: 450px;
     width: 450px;
     height: 450px;
-    max-height: 450px;
+    min-height: 450px;
     margin: auto ;
     justify-content: center;
     align-items: center;
-    border: 1px;
-    /* padding-bottom: 60px; */
+    border: 1px solid black;
     
 }
 
 .container div{
     background-color: white;
-    border: 1px solid rgb(59, 15, 2);
-    width: 26px;
-    height: 26.5px;
-    /* flex: 1; */
+    border: 1px solid rgb(238, 229, 226);
+    /* width: 28.125px;
+    height: 28.125px; */
+    /* flex: 1 1 auto; */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 .buttons button{
     width: 180px;
     margin-bottom:25px ;
     height:40px;
-    background-color: rgb(255, 94, 0); 
+    background-color: rgb(47, 238, 190); 
     border-radius: 40px;
     font-size: 18px;
     font-weight: 300;
     font-family: 'Times New Roman', Times, serif;
+    border: 0;
 }
 .buttons{
     display: flex;

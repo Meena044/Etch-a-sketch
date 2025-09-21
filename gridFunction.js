@@ -1,40 +1,48 @@
+
 let input= document.querySelector('#size');
 const container = document.querySelector(".container");
+defaultGrid(16);
+
+
 input.addEventListener("click", (e)=>{
     
     let value=prompt("enter size");
-    if(value <=0 || value >=100){
+    if(value <=0 || value >100 || isNaN(Number(value))){
         alert("Please enter size between 1 - 100")
     }
     else{
         container.innerHTML = "";
-        for(let i=0; i< value; i++){
-            for(let j=0; j< value; j++){
-                const grid = document.createElement("div");
-                let width = 450/value;
-                let height = 450/value;
-                grid.style.width = width +"px";
-                grid.style.height = width +"px";
-
-                const container = document.querySelector(".container");
-                grid.addEventListener("mouseover", (e)=> {
-                    e.target.style.backgroundColor = "rgba(252, 181, 123, 1)";
-                })
-                container.appendChild(grid);
-            }
-        }
+        defaultGrid(value);
     }
 })
 
-for(let i=0; i< 16; i++){
-    for(let j=0; j< 16 ; j++){
-        const grid = document.createElement("div");
+const reset = document.querySelector("#reset");
+reset.addEventListener("click", ()=>{
+    container.innerHTML = "";
+    defaultGrid(16);
+})
 
-        grid.addEventListener("mouseover", (e)=> {
-            e.target.style.backgroundColor = "rgba(252, 181, 123, 1)" 
-        })
+// default grid function 16x16 grid
+function defaultGrid(size){
+    for(let i=0; i< size; i++){
+        for(let j=0; j< size ; j++){
+            const grid = document.createElement("div");
+            let boxsize = 450/size;
+            grid.style.width = boxsize +"px";
+            grid.style.height = boxsize +"px";
+            grid.dataset.colorCounter = 0; //in HTML it will look like data-colorCounter
 
-        container.appendChild(grid);
+            grid.addEventListener("mouseover", (e)=> {
+                let shade = parseInt(grid.dataset.colorCounter);
+                if(shade<10){
+                    shade += 1
+                    e.target.style.backgroundColor =`rgba(69, 10, 117, ${shade * 0.1} )` ;
+                    grid.dataset.colorCounter = shade;
+                }
+            })
+
+            container.appendChild(grid);
+        }
     }
 }
 
