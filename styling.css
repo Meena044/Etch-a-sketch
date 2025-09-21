@@ -4,7 +4,6 @@ body{
     
  }
  
- 
 #title{
     text-align: center;
 }
@@ -26,19 +25,18 @@ body{
 .container div{
     background-color: white;
     border: 1px solid rgb(238, 229, 226);
-    /* width: 28.125px;
-    height: 28.125px; */
     /* flex: 1 1 auto; */
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-.buttons button{
+.buttons button, input{
     width: 180px;
     margin-bottom:25px ;
     height:40px;
-    background-color: rgb(47, 238, 190); 
+    background-color: rgb(95, 8, 136); 
+    color: rgb(241, 240, 237);
     border-radius: 40px;
     font-size: 18px;
     font-weight: 300;
@@ -50,4 +48,11 @@ body{
     gap: 15px;
     justify-content: center;
     align-items: center;  
+}
+
+input{
+    width: 55px;
+    height: 35px;
+    /* border-radius: 50%; */
+    /* border: none; */
 }
